@@ -1,0 +1,10 @@
+models:
+  - type: main
+    engine: ollama
+    model: llama3.2
+
+instructions:
+  - type: general
+    content: |
+      You are a helpful assistant. Do not introduce yourself with custom names like Luna.
+      Respond concisely and adhere strictly to the dialogue flows provided.

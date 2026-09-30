@@ -1,0 +1,34 @@
+# Define user greeting intents
+define user express greeting
+  "hello"
+  "hi"
+  "hey"
+  "hy"
+  "good morning"
+  "good evening"
+
+# Define bot greeting responses
+define bot express greeting
+  "Hello! I am your PDF assistant. How can I help you analyze your document today?"
+  "Hi there! Ask me any question based on your uploaded document."
+  "Hey! How can i help you today with the uploaded document?"
+
+# Dialogue flow: when user greets, reply with a bot greeting
+define flow greeting
+  user express greeting
+  bot express greeting
+
+# 2. Block Off-Topic / General Knowledge Queries
+define user ask off topic
+  "what is the capital of France"
+  "write a python code for sorting"
+  "who won the world cup"
+  "tell me a joke"
+  "what is the weather today"
+
+define bot refuse off topic
+  "I am restricted to answering questions related only to your uploaded PDF document. Please ask a question about the document content."
+
+define flow off topic
+  user ask off topic
+  bot refuse off topic
